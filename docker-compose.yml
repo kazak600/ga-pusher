@@ -1,0 +1,11 @@
+version: '3.6'
+services:
+  web_server:
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    command: python /backend/main.py
+    container_name: ga_event_push
+    env_file: configuration.env
+    volumes:
+      - .:/backend
